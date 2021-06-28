@@ -98,7 +98,7 @@ export default class Rating extends Component {
           <div className='col-1'><strong>{this.props.placeRating}</strong></div>
           <div className='col-6'><canvas ref={this.canvas} id="canvas" height='30px' ></canvas></div>
         </div>
-        <div className='mb-3 '><a href='#' id='btnComentarios' onClick={this.manejoOnClick}>{this.props.placeReviews ? btnName : ''}</a></div>
+        <div className='mb-3 '><a href='Rating' id='btnComentarios' onClick={this.manejoOnClick}>{this.props.placeReviews ? btnName : ''}</a></div>
         <div className={'container '+mostrar}>
           {reviews}
         </div>

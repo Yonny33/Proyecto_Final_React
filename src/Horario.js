@@ -3,39 +3,39 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/font-awesome/css/font-awesome.css'
 
 export default class Horario extends Component {
-  constructor(props){
+    constructor(props){
     super(props);
     this.state={mostrar:props.mostrarHorario}
-  }
+}
 
-  manejoOnClick = (e) => {
+    manejoOnClick = (e) => {
     if (e.target.id='horario'){
-      this.setState((prevState) => {
+        this.setState((prevState) => {
         return {mostrarHorario:!prevState.mostrarHorario}
-      })
+        })
     }
-  }
+}
 
-  render() {
+    render() {
     var horarios='';
     if (this.props.horarios){
-      const abierto = this.props.horarios.weekday_text.map((horario,index) => {
-          return <div key={index} className='row'>
-                   {horario}
-                 </div>;
-      })
-      horarios=<div className='row'>
-                <div className='col-3'><a id='horario' href='#' onClick={this.manejoOnClick} >Horario</a></div>
+        const abierto = this.props.horarios.weekday_text.map((horario,index) => {
+            return <div key={index} className='row'>
+                    {horario}
+                    </div>;
+        })
+        horarios=<div className='row'>
+                <div className='col-3'><a id='horario' href='Horario' onClick={this.manejoOnClick} >Horario</a></div>
                 <div className={'col-6 '+(this.state.mostrarHorario ? 'd-block' : 'd-none')}>{abierto}</div>
-               </div>
-    }else
-      horarios=<div className='row'>
-                  <strong>Horario no disponible</strong>
+                </div>
+        }else
+        horarios=<div className='row'>
+                    <strong>Horario no disponible</strong>
                 </div>;
     return (
-      <div className='container my-2' >
-          {horarios}
-      </div>
-    )
-  }
+        <div className='container my-2' >
+            {horarios}
+        </div>
+        )
+    }
 }

@@ -20,7 +20,7 @@ export default class Cercanos extends Component {
 
     const placesTemp = (<div  className= 'mb-3'>
                 <div  className='row' >
-                <div  className='col-5 my-auto text-center' ><a id='detalle' href='#'  onClick={(e) => this.props.Escojerdestino(this.props.placeData.name)} >{this.props.numero} {this.props.placeData.name}</a></div>                                                    
+                <div  className='col-5 my-auto text-center' ><a id='detalle' href='Cercanos'  onClick={(e) => this.props.Escojerdestino(this.props.placeData.name)} >{this.props.numero} {this.props.placeData.name}</a></div>                                                    
                 <div  className='col-7 mx-auto '>{placePhoto}</div> 
                 </div>
                 <div  className='row mx-auto'>{rating}</div>  

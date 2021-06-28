@@ -132,15 +132,15 @@ class Maps extends Component {
       else{
         rating = <div key={1} className='row mt-2 mb-1 pl-3' >
                   <strong>No hay comentarios</strong>
-                 </div>;
+                  </div>;
       }
       console.log('address_component: '+ place.address_component, 
       'adr_address: '+place.adr_address, 'alt_id', 'formatted_address', 'geometry: '+place.geometry,
       'icon: '+place.icon, 'permanently_closed', 'photo',' rating: '+place.rating,
       'type: '+place.type, 'url: '+place.url, 'utc_offset', 'vicinity')
       this.setState({places:placesTemp, 
-                     placeRating:rating,
-                     placeHorarios:placeHorarios,
+                    placeRating:rating,
+                    placeHorarios:placeHorarios,
                     cercanos: [] ,
                     direccion : direccion,
                     placeLocation : place.geometry.location})                      
@@ -194,7 +194,7 @@ class Maps extends Component {
     var that = this;
     this.directionsService.route(request, function (result, status) {
       console.log(result)
-      if (status == 'OK') {
+      if (status === 'OK') {
         that.directionsRenderer.setDirections(result);
         document.getElementById('origenx').value =''
 
@@ -256,7 +256,7 @@ class Maps extends Component {
             {this.state.cercanos &&
             <div className="container">
               <div className="mb-3">
-                <a href='#' onClick={(e) => {e.preventDefault();this.setState({muestratodo: true });}}>
+                <a href='Maps' onClick={(e) => {e.preventDefault();this.setState({muestratodo: true });}}>
                   Mostrar más lugares cercanos
                 </a>
               </div>
