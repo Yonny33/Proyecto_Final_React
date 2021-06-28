@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import '../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/font-awesome/css/font-awesome.css'
 
 export default class Place extends Component {
   render() {
     var cantPhotos = this.props.placeData.photos.length;
     if (cantPhotos > 6)
-      cantPhotos = 6;
+      cantPhotos = 3;
     else
       cantPhotos = 3;
-    const colSize = 4;
+    const colSize = 4
     var htmlPhotos=[];
     this.props.placeData.photos.map((photo, index) => {
       htmlPhotos.push(
         <div key={index} className={'col-'+colSize+' text-center'} >
-          <img src={photo} alt={this.props.placeData.name} width='100%'/>
+          <img src={photo} alt={this.props.placeData.name}/>
         </div>);
         if (index === (cantPhotos-1)) return
     })
