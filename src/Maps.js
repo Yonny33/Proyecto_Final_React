@@ -217,7 +217,7 @@ class Maps extends Component {
   
       return (
         <div className="Maps" >
-          <div className='container border rounded p-3 mt-4' style={{width:'50%'}}>
+          <div className='container border rounded p-3 mt-4' style={{width:'70%'}}>
             <div className='row'>
               <div className='col-4'></div>
               <div className='col-4 text-center'>
